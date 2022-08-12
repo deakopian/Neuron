@@ -1,0 +1,15 @@
+name: Run ImmuniWeb Neuron scan
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ImmuniWeb Neuron scan
+        uses: ImmuniwebSA/run-neuron-action@main
+        with:
+          apikey: ${{ secrets.APIKEY }}
+          target: ${{ secrets.TARGET }}
