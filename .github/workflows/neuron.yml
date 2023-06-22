@@ -2,12 +2,12 @@ name: Run ImmuniWeb Neuron scan
 on:
   push:
     branches: [ "main" ]
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Run ImmuniWeb Neuron scan
-          uses: Immuniweb/run-neuron-action@main
-          with:
-            apikey: ${{ secrets.APIKEY }}
-            target: ${{ secrets.TARGET }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ImmuniWeb Neuron scan
+        uses: Immuniweb/run-neuron-action@main
+        with:
+          apikey: ${{ secrets.APIKEY }}
+          target: ${{ secrets.TARGET }}
